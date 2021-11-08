@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  boysundb:
+    container_name: boysundb
+    image: postgres
+    environment:
+      POSTGRES_DB: db_boysun
+      POSTGRES_USER: boysunuser
+      POSTGRES_PASSWORD: boysunpass
+    volumes:
+      - postgres_data:/var/lib/postgresql/databoysun/
+    ports:
+      - "5432:5432"
+  boysunweb:
+    container_name: boysun
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - boysundb
+    env_file:
+      - ./.env.dev
+
+volumes:
+  postgres_data:

@@ -1,0 +1,57 @@
+version: '2'
+
+services:
+  boysundb_prod:
+    container_name: boysundb_prod
+    restart: always
+    image: postgres:12.2
+    environment:
+      POSTGRES_DB: db_boysun_prod
+      POSTGRES_USER: boysunuser_prod
+      POSTGRES_PASSWORD: boysunpass_prod
+    networks:
+      - boysun-network
+    volumes:
+        - boysundata:/var/lib/postgresql/boysundata/
+
+  boysunweb_prod:
+    container_name: boysunweb_prod
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    command: gunicorn config.wsgi:application --bind 0.0.0.0:2121
+    volumes:
+      - static_volume_boysun:/home/app/web/static
+      - media_volume_boysun:/home/app/web/media
+    networks:
+      - boysun-network
+    depends_on:
+      - boysundb_prod
+    ports:
+      - "2121:2121"
+    env_file:
+      - ./.env.prod
+
+  boysunnginx:
+    container_name: boysun-nginx
+    restart: always
+    build: ./nginx
+    volumes:
+      - static_volume_boysun:/home/app/web/static
+      - media_volume_boysun:/home/app/web/media
+    ports:
+      - "4141:4141"
+    networks:
+      - boysun-network
+    depends_on:
+      - boysunweb_prod
+
+volumes:
+  boysundata:
+  static_volume_boysun:
+  media_volume_boysun:
+
+networks:
+  boysun-network:
+    driver: bridge
