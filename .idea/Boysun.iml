@@ -3,9 +3,12 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/src/staticfiles/ckeditor/ckeditor/plugins/codesnippet/lib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="Oqdaryo" />
+    <orderEntry type="module" module-name="Saksonota" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
