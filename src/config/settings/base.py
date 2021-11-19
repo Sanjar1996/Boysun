@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'active_link',
     'ckeditor',
     'ckeditor_uploader',
+    'whitenoise',
 
     # Internal apps
     'articles',
@@ -118,9 +119,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Default primary key field type
