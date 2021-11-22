@@ -128,9 +128,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 }
 
 .navbar ul li a{
-  /* color: rgb(8, 10, 139); */
-  font-style: oblique;
-  font-size: larger;
+  color: rgb(32, 31, 31);
 }
 
 .navbar a, .navbar a:focus {
@@ -140,7 +138,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   padding: 10px 0 10px 30px;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
-  color: rgb(48, 7, 7);
+  color: #fff;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -152,7 +150,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 }
 
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-  color: #193581;
+  color: #a2cce3;
 }
 
 .navbar .dropdown ul {
@@ -165,7 +163,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   z-index: 99;
   opacity: 0;
   visibility: hidden;
-  background: rgb(#fff);
+  background: #fff;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
 }
