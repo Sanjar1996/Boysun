@@ -13,7 +13,7 @@ class HomeCaruselModel(models.Model):
 
 class FutureModels(models.Model):
     title = models.CharField(max_length=250)
-    descriptions = models.TextField()
+    descriptions = RichTextField()
     plan = models.CharField(max_length=100, blank=True)
     image = models.ImageField(upload_to='images/', blank=True)
 
