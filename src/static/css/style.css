@@ -776,6 +776,11 @@ section {
   position: relative;
 }
 
+.why-us .video-box img{
+  width: 650px;
+  height: 550px;
+}
+
 .why-us .video-box img {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -2316,3 +2321,5 @@ section {
 #footer .credits a {
   color: #a2cce3;
 }
+
+.video_y 

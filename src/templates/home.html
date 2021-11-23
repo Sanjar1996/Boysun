@@ -80,18 +80,18 @@
 
 
     <!-- ======= Why Us Section ======= -->
-    <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+    <section class="why-us section-bg video_y" data-aos="fade-up" date-aos-delay="200">
       <div class="container">
         <div class="row">
           {% for data in  mainsite_models %}
-          <div class="col-lg-6">
+          <!-- <div class="col-lg-6"> -->
           {% if data.image %}
           <div class="col-lg-6 video-box">
-            <img src="{{ data.image.url }}" class="img-fluid" alt="" style="width: 400px;">
+            <img src="{{ data.image.url }}" class="img-fluid" alt="" id="youtube_rasm">
             <a href="{{ data.youtube_silka }}" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
           </div>
           {% endif %}
-          </div>
+          <!-- </div> -->
 
           <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
 
